@@ -1,6 +1,6 @@
 users:index
 <ul>
   <% @users.each do |user| %>
-    <li><%= user.email %></li>
+    <li><%= user.id %>: <%= user.email %></li>
   <% end %>
 </ul>
