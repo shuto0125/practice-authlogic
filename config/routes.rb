@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   namespace :user do
     resources :registrations, only: [:new, :create]
     resources :sessions, only: :create
+    get "mail_activate/:activate_code",
+        controller: "mail_activate",
+        action: "create", as: "mail_activate"
+    resources :password_resets, onlye: [:new, :create, :edit, :update]
   end
   resources :users, only: [:index]
 end

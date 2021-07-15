@@ -8,6 +8,7 @@ class User::RegistrationsController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      @user.deliver_mail_activate_instructions!
       redirect_to "/"
     else
       render action: :new
