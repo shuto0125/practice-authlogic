@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_11_055629) do
+ActiveRecord::Schema.define(version: 2021_07_14_155748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2021_07_11_055629) do
     t.boolean "approved", default: false
     t.boolean "confirmed", default: false
     t.string "perishable_token"
+    t.string "single_access_token", null: false
   end
 
 end
